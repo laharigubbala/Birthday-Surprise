@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Bangaram ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- =====================================================
+     PAGE 1
+===================================================== -->
+
+<section id="page1" class="page active">
+
+    <div class="floating-hearts">
+        <span>♡</span>
+        <span>♡</span>
+        <span>♡</span>
+        <span>♡</span>
+        <span>♡</span>
+        <span>♡</span>
+    </div>
+
+    <div class="card opening-card">
+
+        <div class="tiny-heart">♡</div>
+
+        <p class="hello">
+            Hey Bangaram... 👀❤️
+        </p>
+
+        <p class="small-text">
+            Before you ask...
+        </p>
+
+        <h1>
+            What did you do now? 😂
+        </h1>
+
+        <p class="message">
+            Just trust me...<br>
+            I made something for you. 🥹
+        </p>
+
+        <button onclick="showPage(2)">
+            ♡ Open it, Kannaa →
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PAGE 2 - MEMORY QUIZ
+===================================================== -->
+
+<section id="page2" class="page">
+
+    <div class="quiz-card">
+
+        <div class="quiz-heart">
+            ❤️
+        </div>
+
+        <h2>
+            How well do you remember us? 👀❤️
+        </h2>
+
+        <p class="quiz-intro">
+            Okay Kannaa... 👀<br>
+            Before I show you something special,<br>
+            let's see how well you remember our story. ❤️
+        </p>
+
+        <p class="ready">
+            Ready? 😏
+        </p>
+
+
+        <!-- QUESTION 1 -->
+
+        <div id="question1" class="question">
+
+            <p class="question-number">
+                Question 1 of 3
+            </p>
+
+            <h3>
+                Where did our story begin? ❤️
+            </h3>
+
+            <button class="option"
+                    onclick="checkAnswer(1, false)">
+                🏠 Home
+            </button>
+
+            <button class="option"
+                    onclick="checkAnswer(1, true)">
+                🏫 School
+            </button>
+
+            <button class="option"
+                    onclick="checkAnswer(1, false)">
+                📱 Online
+            </button>
+
+            <button class="option"
+                    onclick="checkAnswer(1, false)">
+                🎓 College
+            </button>
+
+            <p id="error1" class="error"></p>
+
+        </div>
+
+
+        <!-- QUESTION 2 -->
+
+        <div id="question2" class="question hidden">
+
+            <p class="question-number">
+                Question 2 of 3
+            </p>
+
+            <h3>
+                What date did I propose to you? 👀❤️
+            </h3>
+
+            <button class="option"
+                    onclick="checkAnswer(2, true)">
+                💌 20 October 2023
+            </button>
+
+            <button class="option"
+                    onclick="checkAnswer(2, false)">
+                ❤️ 2 December 2023
+            </button>
+
+            <button class="option"
+                    onclick="checkAnswer(2, false)">
+                🌸 20 December 2023
+            </button>
+
+            <button class="option"
+                    onclick="checkAnswer(2, false)">
+                ✨ 2 October 2023
+            </button>
+
+            <p id="error2" class="error"></p>
+
+        </div>
+
+
+        <!-- QUESTION 3 -->
+
+        <div id="question3" class="question hidden">
+
+            <p class="question-number">
+                Question 3 of 3
+            </p>
+
+            <h3>
+                Which name do I call you the most? 🥰
+            </h3>
+
+            <button class="option"
+                    onclick="checkAnswer(3, false)">
+                Ganesh
+            </button>
+
+            <button class="option"
+                    onclick="checkAnswer(3, false)">
+                Bangaram
+            </button>
+
+            <button class="option"
+                    onclick="checkAnswer(3, true)">
+                Kannaa ❤️
+            </button>
+
+            <button class="option"
+                    onclick="checkAnswer(3, false)">
+                Reyy 😂
+            </button>
+
+            <p id="error3" class="error"></p>
+
+        </div>
+
+
+        <!-- QUIZ COMPLETE -->
+
+        <div id="quizComplete" class="hidden">
+
+            <div class="success">
+                ✨ 3 / 3 ✨
+            </div>
+
+            <h2>
+                You still remember us! 🥹❤️
+            </h2>
+
+            <div class="date-reveal">
+
+                <p>
+                    20 • 10 • 2023
+                </p>
+
+                <span>
+                    The day our story began. ❤️
+                </span>
+
+            </div>
+
+            <button onclick="showPage(3)">
+                Continue our story →
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PAGE 3 - SPECIAL DAY
+===================================================== -->
+
+<section id="page3" class="page">
+
+    <div class="special-card">
+
+        <div class="sparkle">
+            ✨
+        </div>
+
+        <p class="special-label">
+            A MEMORY CLOSE TO MY HEART
+        </p>
+
+        <h2>
+            SPECIAL DAY ❤️
+        </h2>
+
+        <p class="special-question">
+            Did you remember our most special day? 👀
+        </p>
+
+        <button id="revealDateBtn"
+                onclick="revealDate()">
+            ✨ Reveal the date
+        </button>
+
+
+        <div id="specialReveal" class="hidden">
+
+            <div class="special-date">
+                02 • 12 • 2023 ❤️
+            </div>
+
+            <div class="special-message">
+
+                <p>
+                    This day will always be very special to us.
+                </p>
+
+                <p>
+                    It wasn't just the day we finally met...
+                    it was the day I felt even more connected
+                    to you — with my heart and with a feeling
+                    I'll never forget. 🥹❤️
+                </p>
+
+                <p>
+                    Even now, whenever I think about that moment,
+                    I still get goosebumps.
+                </p>
+
+                <p>
+                    Some moments don't need to be explained...
+                    they just stay with you. ✨
+                </p>
+
+            </div>
+
+            <p class="beginning">
+                And that was only the beginning... ❤️
+            </p>
+
+            <button onclick="showPage(4)">
+                Continue our story →
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PAGE 4 - THREE GAMES
+===================================================== -->
+
+<section id="page4" class="page">
+
+    <div class="games-card">
+
+
+        <!-- GAME MENU -->
+
+        <div id="gameMenu">
+
+            <p class="game-label">
+                A LITTLE SOMETHING FOR YOU 🎀
+            </p>
+
+            <h2>
+                Let's Play, Kannaa ❤️
+            </h2>
+
+            <p class="game-intro">
+                Three tiny games...<br>
+                Let's see how well you know me. 👀
+            </p>
+
+            <div class="game-buttons">
+
+                <button onclick="openGame('hiddenHearts')">
+                    💗 Hidden Hearts
+                </button>
+
+                <button onclick="openGame('knowMe')">
+                    🥰 Know Me
+                </button>
+
+                <button onclick="openGame('chooseMe')">
+                    💌 Choose Me
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             GAME 1 - HIDDEN HEARTS
+        ================================================= -->
+
+        <div id="hiddenHearts" class="game hidden">
+
+            <p class="game-number">
+                GAME 1
+            </p>
+
+            <h2>
+                💗 Hidden Hearts
+            </h2>
+
+            <p>
+                9 hearts unnayi... 👀<br>
+                But only <b>3</b> are the real ones! ❤️
+            </p>
+
+            <p class="hint">
+                You have only 5 attempts.<br>
+                Choose carefully 😏
+            </p>
+
+
+            <div class="heart-grid">
+
+                <button onclick="pickHeart(0)">♡</button>
+
+                <button onclick="pickHeart(1)">♡</button>
+
+                <button onclick="pickHeart(2)">♡</button>
+
+                <button onclick="pickHeart(3)">♡</button>
+
+                <button onclick="pickHeart(4)">♡</button>
+
+                <button onclick="pickHeart(5)">♡</button>
+
+                <button onclick="pickHeart(6)">♡</button>
+
+                <button onclick="pickHeart(7)">♡</button>
+
+                <button onclick="pickHeart(8)">♡</button>
+
+            </div>
+
+
+            <p id="attemptCount">
+                Attempts: 0 / 5
+            </p>
+
+            <p id="heartCount">
+                Correct hearts: 0 / 3
+            </p>
+
+            <p id="heartMessage"
+               class="game-message">
+            </p>
+
+
+            <div id="heartComplete"
+                 class="hidden game-success">
+
+                You found all 3! 🥹❤️
+                <br>
+
+                <small>
+                    Maybe you really do know where my heart is. 😏
+                </small>
+
+            </div>
+
+
+            <div id="heartRetry"
+                 class="hidden">
+
+                <p class="game-fail">
+                    Awww... you ran out of attempts 😂❤️
+                </p>
+
+                <button onclick="resetHearts()">
+                    Try Again 🔄
+                </button>
+
+            </div>
+
+
+            <button class="back-game"
+                    onclick="backToGames()">
+                ← Back to games
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             GAME 2 - KNOW ME
+        ================================================= -->
+
+        <div id="knowMe" class="game hidden">
+
+            <p class="game-number">
+                GAME 2
+            </p>
+
+            <h2>
+                🥰 Know Me
+            </h2>
+
+            <p class="game-intro">
+                No options this time... 👀<br>
+                Let's see if you actually know me. ❤️
+            </p>
+
+
+            <!-- QUESTION 1 -->
+
+            <div id="knowQ1">
+
+                <h3>
+                    Nenu ekkuva ga use chese 3 words? 👀
+                </h3>
+
+                <p class="hint">
+                    Type any 3 words you remember.
+                </p>
+
+                <input
+                    type="text"
+                    id="wordAnswer"
+                    class="game-input"
+                    placeholder="Type your answer..."
+                >
+
+                <button onclick="checkWordsTyped()">
+                    Check ❤️
+                </button>
+
+                <p id="wordError"
+                   class="error">
+                </p>
+
+            </div>
+
+
+            <!-- QUESTION 2 -->
+
+            <div id="knowQ2"
+                 class="hidden">
+
+                <h3>
+                    Naku nachina chocolate? 🍫
+                </h3>
+
+                <input
+                    type="text"
+                    id="chocolateAnswer"
+                    class="game-input"
+                    placeholder="Type your answer..."
+                >
+
+                <button onclick="checkChocolateTyped()">
+                    Check 🍫
+                </button>
+
+                <p id="chocolateError"
+                   class="error">
+                </p>
+
+            </div>
+
+
+            <!-- QUESTION 3 -->
+
+            <div id="knowQ3"
+                 class="hidden">
+
+                <h3>
+                    Nuvvu ela unte nenu happy ga untanu? 🥹❤️
+                </h3>
+
+                <p class="hint">
+                    Tell me in your own words...
+                </p>
+
+                <textarea
+                    id="happyAnswer"
+                    class="game-input textarea-input"
+                    placeholder="Type your answer..."
+                ></textarea>
+
+                <button onclick="checkHappyTyped()">
+                    Check ❤️
+                </button>
+
+                <p id="happyError"
+                   class="error">
+                </p>
+
+            </div>
+
+
+            <!-- QUESTION 4 -->
+
+            <div id="knowQ4"
+                 class="hidden">
+
+                <h3>
+                    Naku baaga nachina two things? 🥰
+                </h3>
+
+                <p class="hint">
+                    Type both...
+                </p>
+
+                <input
+                    type="text"
+                    id="twoThingsAnswer"
+                    class="game-input"
+                    placeholder="Type your answer..."
+                >
+
+                <button onclick="checkTwoThingsTyped()">
+                    Check 🥰
+                </button>
+
+                <p id="twoThingsError"
+                   class="error">
+                </p>
+
+            </div>
+
+
+            <!-- COMPLETE -->
+
+            <div id="knowComplete"
+                 class="hidden game-success">
+
+                Awww... you actually know me pretty well! 🥹❤️
+
+                <br><br>
+
+                <small>
+                    Maybe I don't need to explain myself
+                    so much after all. 😌🫶
+                </small>
+
+            </div>
+
+
+            <button class="back-game"
+                    onclick="backToGames()">
+                ← Back to games
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             GAME 3 - CHOOSE ME
+        ================================================= -->
+
+        <div id="chooseMe"
+             class="game hidden">
+
+            <p class="game-number">
+                GAME 3
+            </p>
+
+            <h2>
+                💌 Choose Me
+            </h2>
+
+            <p>
+                Choose carefully... 👀
+            </p>
+
+
+            <!-- QUESTION 1 -->
+
+            <div id="chooseQ1">
+
+                <h3>
+                    Hug or Kiss? 👀
+                </h3>
+
+                <button class="choice"
+                        onclick="chooseNext(1, 'hug')">
+                    Hug 🤗
+                </button>
+
+                <button class="choice"
+                        onclick="chooseNext(1, 'kiss')">
+                    Kiss 😘
+                </button>
+
+            </div>
+
+
+            <!-- REACTION 1 -->
+
+            <div id="chooseReaction1"
+                 class="choose-reaction hidden">
+            </div>
+
+
+            <!-- QUESTION 2 -->
+
+            <div id="chooseQ2"
+                 class="hidden">
+
+                <h3>
+                    Me or Money? 👀
+                </h3>
+
+                <button class="choice"
+                        onclick="chooseNext(2, 'me')">
+                    Me ❤️
+                </button>
+
+                <button class="choice"
+                        onclick="chooseNext(2, 'money')">
+                    Money 💰
+                </button>
+
+            </div>
+
+
+            <!-- REACTION 2 -->
+
+            <div id="chooseReaction2"
+                 class="choose-reaction hidden">
+            </div>
+
+
+            <!-- QUESTION 3 -->
+
+            <div id="chooseQ3"
+                 class="hidden">
+
+                <h3>
+                    Love or Lust? ❤️
+                </h3>
+
+                <button class="choice"
+                        onclick="chooseNext(3, 'love')">
+                    Love ❤️
+                </button>
+
+                <button class="choice"
+                        onclick="chooseNext(3, 'lust')">
+                    Lust 😏
+                </button>
+
+            </div>
+
+
+            <!-- REACTION 3 -->
+
+            <div id="chooseReaction3"
+                 class="choose-reaction hidden">
+            </div>
+
+
+            <!-- COMPLETE -->
+
+            <div id="chooseComplete"
+                 class="hidden">
+
+                <div class="final-choice">
+
+                    Three choices. And somehow...<br>
+                    I was hoping you'd choose me every time. 🥹❤️
+
+                </div>
+
+                <button onclick="showPage(5)">
+                    There's one last thing... 💌
+                </button>
+
+            </div>
+
+
+            <button class="back-game"
+                    onclick="backToGames()">
+                ← Back to games
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PAGE 5 - LETTER + SECRET CODE + PHOTO
+===================================================== -->
+
+<section id="page5" class="page">
+
+    <div class="letter-container">
+
+
+        <!-- ENVELOPE -->
+
+        <div id="envelopeSection">
+
+            <div class="envelope">
+                💌
+            </div>
+
+            <h2>
+                There's something I want to tell you... 💌
+            </h2>
+
+            <button onclick="openLetter()">
+                ♡ Open the letter
+            </button>
+
+        </div>
+
+
+        <!-- LETTER -->
+
+        <div id="letterSection"
+             class="hidden">
+
+            <div class="letter">
+
+                <p class="letter-title">
+                    To My Bangaram ❤️
+                </p>
+
+                <p>
+                    Hey Kannaa... 🥹❤️
+                </p>
+
+                <p>
+                    I don't even know where to start because
+                    there are so many things I want to tell you.
+                </p>
+
+                <p>
+                    Our journey has been almost three years now...
+                    and when I look back at everything we've been
+                    through, I honestly feel so lucky to have you
+                    in my life. ❤️
+                </p>
+
+                <p>
+                    From <b>20 October 2023</b> —
+                    the day our story began —
+                    to every little moment that came after it,
+                    every memory has become a small piece of my heart.
+                </p>
+
+                <p>
+                    And then came <b>2 December 2023</b>...
+                    the day we finally met and the day I felt your
+                    touch for the first time. 🥹
+                </p>
+
+                <p>
+                    I don't think I'll ever be able to properly
+                    explain what that moment felt like.
+                    Even now, when I think about it,
+                    I still get goosebumps. ❤️
+                </p>
+
+                <p>
+                    You may be serious most of the time,
+                    but I love those moments when your mood is good
+                    and you show me so much love.
+                    I love the way you care, the way you work hard,
+                    and even the way you keep asking me,
+                    <i>"What do you want?"</i> 🥹❤️
+                </p>
+
+                <p>
+                    I don't need everything to be perfect.
+                    I just want us to keep making memories,
+                    keep understanding each other,
+                    keep choosing each other,
+                    and keep growing together. 🫶
+                </p>
+
+                <p>
+                    Thank you for being a part of my life,
+                    for all the memories,
+                    for all the love,
+                    and simply for being <b>you</b>. ❤️
+                </p>
+
+                <p>
+                    No matter how many birthdays come,
+                    I hope I get to celebrate many more of them
+                    with you. 🥹🎂
+                </p>
+
+                <p class="birthday-line">
+                    Happy Birthday, my Bangaram. 🥹❤️
+                </p>
+
+                <p class="love-line">
+                    I love you... ❤️
+                </p>
+
+            </div>
+
+
+            <!-- SECRET CODE -->
+
+            <div class="secret-section">
+
+                <p>
+                    If you've read this entire letter...
+                    Then maybe you're ready for the little secret
+                    I kept for you. 👀❤️
+                </p>
+
+                <p>
+                    Enter our secret code to unlock what's behind
+                    this letter. 🔐
+                </p>
+
+                <input
+                    type="password"
+                    id="secretCode"
+                    placeholder="Enter our secret code"
+                    maxlength="6"
+                >
+
+                <button onclick="unlockSecret()">
+                    🔐 Unlock
+                </button>
+
+                <p id="codeError"
+                   class="error">
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- FINAL PHOTO -->
+
+        <div id="finalSection"
+             class="hidden">
+
+            <div class="code-success">
+
+                Code accepted. ❤️
+                <br>
+
+                <span>
+                    You remembered our little secret... 🥹
+                </span>
+
+            </div>
+
+
+            <div class="photo-frame">
+
+                <img
+                    src="images/our -photo.jpeg"
+                    alt="Our memory"
+                >
+
+            </div>
+
+
+            <h2>
+                And here's the memory behind the words. ❤️
+            </h2>
+
+            <p class="forever">
+                Some moments are worth keeping forever. ✨
+            </p>
+
+            <p class="final-love">
+                Forever yours,<br>
+                Lahari ❤️
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

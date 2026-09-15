@@ -1,0 +1,796 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: #fff7f8;
+    color: #4b3038;
+    overflow-x: hidden;
+}
+
+
+/* ================= COMMON ================= */
+
+.page {
+    min-height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 18px;
+    position: relative;
+    overflow: hidden;
+}
+
+.page.active {
+    display: flex;
+}
+
+.hidden {
+    display: none !important;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    transition: 0.25s ease;
+}
+
+button:active {
+    transform: scale(0.96);
+}
+
+
+/* ================= PAGE 1 ================= */
+
+#page1 {
+    background:
+        radial-gradient(circle at top left,
+        #ffe5ec,
+        transparent 35%),
+        radial-gradient(circle at bottom right,
+        #ffe9df,
+        transparent 35%),
+        #fff8f7;
+}
+
+.card {
+    width: min(100%, 420px);
+    padding: 48px 28px;
+    text-align: center;
+    background: rgba(255,255,255,0.84);
+    border: 1px solid rgba(180,120,130,0.15);
+    border-radius: 30px;
+    box-shadow:
+        0 20px 60px rgba(110,65,75,0.12);
+    position: relative;
+    z-index: 2;
+}
+
+.tiny-heart {
+    font-size: 32px;
+    margin-bottom: 22px;
+    animation: heartbeat 1.5s infinite;
+}
+
+.hello {
+    font-size: 18px;
+    margin-bottom: 18px;
+}
+
+.small-text {
+    font-size: 14px;
+    opacity: 0.7;
+    margin-bottom: 10px;
+}
+
+.card h1 {
+    font-size: 31px;
+    margin-bottom: 22px;
+    color: #5b3540;
+}
+
+.message {
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.card button,
+.quiz-card > button,
+.special-card button,
+.games-card button,
+.letter-container button {
+    padding: 14px 23px;
+    border-radius: 30px;
+    background: #9d5367;
+    color: white;
+    font-size: 15px;
+    box-shadow:
+        0 8px 20px rgba(157,83,103,0.22);
+}
+
+.card button:hover,
+.quiz-card button:hover,
+.special-card button:hover,
+.games-card button:hover,
+.letter-container button:hover {
+    transform: translateY(-2px);
+    background: #874456;
+}
+
+.floating-hearts span {
+    position: absolute;
+    font-size: 35px;
+    opacity: 0.22;
+    animation: floatHeart 7s infinite ease-in-out;
+}
+
+.floating-hearts span:nth-child(1) {
+    left: 8%;
+    top: 15%;
+}
+
+.floating-hearts span:nth-child(2) {
+    right: 10%;
+    top: 20%;
+    animation-delay: 1s;
+}
+
+.floating-hearts span:nth-child(3) {
+    left: 15%;
+    bottom: 15%;
+    animation-delay: 2s;
+}
+
+.floating-hearts span:nth-child(4) {
+    right: 15%;
+    bottom: 20%;
+    animation-delay: 3s;
+}
+
+.floating-hearts span:nth-child(5) {
+    left: 45%;
+    top: 8%;
+    animation-delay: 1.5s;
+}
+
+.floating-hearts span:nth-child(6) {
+    right: 45%;
+    bottom: 7%;
+    animation-delay: 2.5s;
+}
+
+
+/* ================= PAGE 2 ================= */
+
+#page2 {
+    background:
+        linear-gradient(135deg,
+        #fff5f6,
+        #fffaf4);
+}
+
+.quiz-card {
+    width: min(100%, 480px);
+    padding: 35px 22px;
+    text-align: center;
+    background: rgba(255,255,255,0.9);
+    border-radius: 28px;
+    box-shadow:
+        0 18px 55px rgba(90,50,60,0.12);
+}
+
+.quiz-heart {
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.quiz-card h2 {
+    font-size: 26px;
+    margin-bottom: 15px;
+}
+
+.quiz-intro {
+    line-height: 1.7;
+    font-size: 15px;
+}
+
+.ready {
+    margin: 15px 0 28px;
+    font-weight: bold;
+}
+
+.question-number {
+    font-size: 13px;
+    opacity: 0.55;
+    margin-bottom: 12px;
+}
+
+.question h3 {
+    font-size: 19px;
+    line-height: 1.5;
+    margin-bottom: 18px;
+}
+
+.option {
+    display: block;
+    width: 100%;
+    margin: 9px 0;
+    padding: 13px;
+    border-radius: 15px;
+    background: #fff4f5;
+    border: 1px solid #f0d5da;
+    color: #54343d;
+}
+
+.option:hover {
+    background: #fbe3e8;
+}
+
+.error {
+    min-height: 22px;
+    color: #b24b5d;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.success {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.date-reveal {
+    padding: 20px;
+    margin: 20px 0;
+    background: #fff0f3;
+    border-radius: 20px;
+}
+
+.date-reveal p {
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 7px;
+}
+
+.date-reveal span {
+    font-size: 13px;
+}
+
+
+/* ================= PAGE 3 ================= */
+
+#page3 {
+    background:
+        radial-gradient(circle at center,
+        #fff0f3,
+        #fffaf7);
+}
+
+.special-card {
+    width: min(100%, 480px);
+    padding: 38px 25px;
+    text-align: center;
+    background: rgba(255,255,255,0.9);
+    border-radius: 30px;
+    box-shadow:
+        0 20px 65px rgba(100,55,65,0.13);
+}
+
+.sparkle {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.special-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    opacity: 0.55;
+    margin-bottom: 12px;
+}
+
+.special-card h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.special-question {
+    margin-bottom: 25px;
+}
+
+.special-date {
+    font-size: 27px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    padding: 18px;
+    margin: 20px 0;
+    border-radius: 20px;
+    background: #fff0f3;
+    animation: dateAppear 0.8s ease;
+}
+
+.special-message {
+    text-align: left;
+    line-height: 1.75;
+    font-size: 15px;
+}
+
+.special-message p {
+    margin-bottom: 16px;
+}
+
+.beginning {
+    margin: 22px 0;
+    font-style: italic;
+}
+
+
+/* ================= PAGE 4 ================= */
+
+#page4 {
+    background:
+        radial-gradient(circle at top right,
+        #ffe9ef,
+        transparent 40%),
+        #fff8f5;
+}
+
+.games-card {
+    width: min(100%, 500px);
+    padding: 32px 20px;
+    text-align: center;
+    background: rgba(255,255,255,0.92);
+    border-radius: 30px;
+    box-shadow:
+        0 20px 60px rgba(100,55,65,0.12);
+}
+
+.game-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    opacity: 0.55;
+    margin-bottom: 12px;
+}
+
+.games-card h2 {
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.game-intro {
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.game-buttons button {
+    display: block;
+    width: 100%;
+    margin: 11px 0;
+}
+
+.game {
+    animation: fadeIn 0.5s ease;
+}
+
+.game-number {
+    font-size: 11px;
+    letter-spacing: 2px;
+    opacity: 0.5;
+    margin-bottom: 8px;
+}
+
+.game h2 {
+    margin-bottom: 10px;
+}
+
+.game h3 {
+    font-size: 18px;
+    line-height: 1.5;
+    margin: 22px 0;
+}
+
+.hint {
+    font-size: 13px;
+    opacity: 0.6;
+    margin: 12px 0;
+}
+
+
+/* ================= GAME 1 ================= */
+
+.heart-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 25px 0;
+}
+
+.heart-grid button {
+    padding: 20px 10px;
+    font-size: 27px;
+    background: #fff0f3;
+    color: #a95368;
+    border: 1px solid #f0d3da;
+    box-shadow: none;
+}
+
+.heart-grid button.found {
+    background: #9d5367;
+    color: white;
+}
+
+.heart-grid button.wrong-heart {
+    background: #f5e1e5;
+    color: #c17a89;
+}
+
+.game-message {
+    min-height: 25px;
+    margin: 12px 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.game-success {
+    padding: 18px;
+    margin: 20px 0;
+    background: #fff0f3;
+    border-radius: 18px;
+    line-height: 1.6;
+}
+
+.game-fail {
+    padding: 15px;
+    background: #fff0f3;
+    border-radius: 15px;
+    line-height: 1.6;
+}
+
+
+/* ================= GAME 2 ================= */
+
+.game-input {
+    display: block;
+    width: 100%;
+    padding: 14px 16px;
+    margin: 15px 0;
+    border: 1px solid #e5cbd2;
+    border-radius: 14px;
+    background: #fffafa;
+    color: #54343d;
+    font-family: inherit;
+    font-size: 15px;
+    outline: none;
+}
+
+.game-input:focus {
+    border-color: #a85b70;
+    box-shadow:
+        0 0 0 3px rgba(168,91,112,0.08);
+}
+
+.textarea-input {
+    min-height: 110px;
+    resize: vertical;
+}
+
+
+/* ================= GAME 3 ================= */
+
+.choice {
+    display: block;
+    width: 100%;
+    margin: 9px 0;
+    padding: 14px;
+    border-radius: 15px;
+    background: #fff1f4;
+    color: #56353e;
+    border: 1px solid #efd5dc;
+    box-shadow: none !important;
+}
+
+.choice:hover {
+    background: #fbe1e8;
+}
+
+.choose-reaction {
+    padding: 17px;
+    margin: 15px 0;
+    background: #fff0f3;
+    border-radius: 18px;
+    line-height: 1.6;
+    font-size: 15px;
+    animation: reactionPop 0.4s ease;
+}
+
+.final-choice {
+    padding: 25px 15px;
+    line-height: 1.7;
+    margin: 20px 0;
+    background: #fff0f3;
+    border-radius: 20px;
+}
+
+.back-game {
+    margin-top: 20px !important;
+    background: transparent !important;
+    color: #8f4b5e !important;
+    box-shadow: none !important;
+}
+
+
+/* ================= PAGE 5 ================= */
+
+#page5 {
+    align-items: flex-start;
+    padding-top: 45px;
+    padding-bottom: 60px;
+    background:
+        radial-gradient(circle at top,
+        #ffecef,
+        transparent 40%),
+        #fff9f5;
+}
+
+.letter-container {
+    width: min(100%, 520px);
+    text-align: center;
+}
+
+#envelopeSection {
+    padding-top: 20vh;
+}
+
+.envelope {
+    width: 125px;
+    height: 95px;
+    margin: 0 auto 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow:
+        0 18px 45px rgba(100,55,65,0.15);
+    animation: envelopeFloat 2s infinite ease-in-out;
+}
+
+#envelopeSection h2 {
+    font-size: 24px;
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+
+.letter {
+    background: #fffdf9;
+    padding: 30px 23px;
+    border-radius: 8px;
+    text-align: left;
+    box-shadow:
+        0 15px 45px rgba(85,55,45,0.13);
+    border: 1px solid #f0e2d6;
+    line-height: 1.8;
+    font-size: 15px;
+    position: relative;
+}
+
+.letter::before {
+    content: "";
+    position: absolute;
+    inset: 8px;
+    border: 1px solid #ead7c8;
+    pointer-events: none;
+}
+
+.letter p {
+    position: relative;
+    margin-bottom: 17px;
+}
+
+.letter-title {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 25px !important;
+}
+
+.birthday-line {
+    font-weight: bold;
+    font-size: 17px;
+    text-align: center;
+    margin-top: 25px;
+}
+
+.love-line {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.secret-section {
+    margin-top: 25px;
+    padding: 25px 18px;
+    background: rgba(255,255,255,0.8);
+    border-radius: 22px;
+}
+
+.secret-section p {
+    line-height: 1.6;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.secret-section input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #e6cbd2;
+    border-radius: 13px;
+    text-align: center;
+    font-size: 17px;
+    outline: none;
+    margin: 8px 0 12px;
+    letter-spacing: 4px;
+}
+
+.code-success {
+    margin: 25px 0;
+    padding: 18px;
+    border-radius: 20px;
+    background: #fff0f3;
+    font-weight: bold;
+    line-height: 1.6;
+}
+
+.code-success span {
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.photo-frame {
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow:
+        0 20px 50px rgba(70,45,45,0.18);
+    transform: rotate(-1deg);
+    margin: 25px auto;
+    width: 95%;
+}
+
+.photo-frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+#finalSection h2 {
+    font-size: 23px;
+    margin: 22px 0 10px;
+}
+
+.forever {
+    font-style: italic;
+    opacity: 0.75;
+}
+
+.final-love {
+    margin-top: 28px;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes heartbeat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.18);
+    }
+
+}
+
+@keyframes floatHeart {
+
+    0%, 100% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateY(-25px) rotate(10deg);
+    }
+
+}
+
+@keyframes dateAppear {
+
+    from {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+@keyframes envelopeFloat {
+
+    0%, 100% {
+        transform: translateY(0) rotate(-2deg);
+    }
+
+    50% {
+        transform: translateY(-8px) rotate(2deg);
+    }
+
+}
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes reactionPop {
+
+    from {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 380px) {
+
+    .card h1 {
+        font-size: 26px;
+    }
+
+    .quiz-card h2,
+    .games-card h2 {
+        font-size: 23px;
+    }
+
+    .special-card h2 {
+        font-size: 26px;
+    }
+
+    .letter {
+        padding: 27px 18px;
+        font-size: 14px;
+    }
+
+}
